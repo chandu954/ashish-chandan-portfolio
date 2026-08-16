@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ashish-chandan.dev — Portfolio
 
-## Getting Started
+Personal portfolio of **Ashish Chandan** — AI Engineer &amp; Full-Stack Developer.
 
-First, run the development server:
+Terminal-styled single-page site: hero with a live-typing terminal, stats strip, skills matrix, six project cards with live-demo links, a resume-optimization before/after showcase, two full case studies, and a ⌘K command palette.
+
+## Sections
+
+| Route | Description |
+| --- | --- |
+| `/` | Single-page portfolio (hero, stats, about, projects, showcase, case studies, experience, praise, skills, education, contact) |
+| `/blog` | Technical write-ups (RAG, multi-agent systems, LLM products) |
+| `/blog/[slug]` | Individual post pages (SSG via `generateStaticParams`) |
+| `/feed.xml` | RSS feed for published posts |
+| `/opengraph-image.png` | Auto-generated social preview |
+
+## Stack
+
+- **Framework** — Next.js 15 (App Router), TypeScript, Tailwind CSS v4
+- **Animation** — IntersectionObserver-driven reveal (no runtime animation deps)
+- **Analytics** — @vercel/analytics (auto-enabled on Vercel)
+- **Fonts** — Inter + JetBrains Mono via `next/font`
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev         # dev server
+npm run build       # production build
+npm run start       # serve production build
+npm run check       # lint + typecheck + tests
+npm run test        # vitest (blog data integrity, page structure)
+npm run check:links # verify all external links are reachable
+```
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  page.tsx              # single-page composition
+  layout.tsx            # fonts, metadata, analytics
+  blog/                 # blog index + posts content
+  opengraph-image.tsx   # dynamic OG image
+  robots.ts / sitemap.ts
+  feed.xml/route.ts     # RSS
+components/
+  Nav, Hero, Terminal, Stats, About, Projects, Showcase,
+  CaseStudy, CaseStudyEleva, Experience, Praise, Skills,
+  Education, Contact, Footer, CommandPalette, ScrollProgress
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Custom domain
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The site URL is centralized in `lib/site.ts` and consumed by sitemap, robots, JSON-LD, and OG metadata. Point a custom domain by setting the Vercel env var `NEXT_PUBLIC_SITE_URL=https://yourdomain.com` — no code changes.
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to GitHub and import into [Vercel](https://vercel.com) — zero config. Analytics, OG image, sitemap, and robots.txt all work serverless out of the box.

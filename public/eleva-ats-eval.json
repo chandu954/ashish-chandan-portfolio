@@ -1,0 +1,22 @@
+{
+  "artifact": "eleva-ats-score-eval",
+  "version": 1,
+  "system": "Eleva — ATS resume scoring pipeline",
+  "target": "Ashish Chandan resume (Ashish_Chandan_ATS_Resume.pdf)",
+  "task": "Measure the ATS keyword-analysis score of the same resume before and after optimization.",
+  "measurement": {
+    "before": 61,
+    "after": 91,
+    "delta": 30,
+    "unit": "eleva ats score (0-100)",
+    "sample": "single resume, same JD target, before/after versions"
+  },
+  "method": {
+    "evaluator": "eleva.resume_analyzer.score_resume",
+    "harness": "eleva eval runner v1",
+    "description": "Weighted keyword match against the target job description, section completeness, quantified-impact presence, and formatting parseability.",
+    "link": "https://ashish-chandan.vercel.app/blog/building-elevas-ats-pipeline"
+  },
+  "measured_at": "2026-08-12",
+  "notes": "Regenerate this file by running the evaluator harness against the before/after versions; the pipeline is documented in the linked post."
+}
