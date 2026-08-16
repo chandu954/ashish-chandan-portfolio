@@ -29,7 +29,7 @@ export default function Praise() {
         <Reveal>
           <SectionHeader
             index="05"
-            title="Verified delivery"
+            title="Evidence"
             subtitle="Not endorsements — evidence. Each claim on this page links to something you can check."
           />
         </Reveal>
