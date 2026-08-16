@@ -7,7 +7,7 @@ export default function Contact() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <Reveal>
           <SectionHeader
-            index="07"
+            index="06"
             title="Let's talk."
             subtitle="Interested in AI engineering, LLM applications, RAG systems, or full-stack products?"
           />

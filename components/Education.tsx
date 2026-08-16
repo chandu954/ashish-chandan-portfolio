@@ -6,7 +6,7 @@ export default function Education() {
     <section id="education" className="scroll-mt-20 border-t border-border bg-bg">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <Reveal>
-          <SectionHeader index="06" title="Education" />
+          <SectionHeader index="05" title="Education" />
         </Reveal>
 
         <Reveal delay={0.05}>

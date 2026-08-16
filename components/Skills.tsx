@@ -46,7 +46,7 @@ export default function Skills() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <Reveal>
           <SectionHeader
-            index="05"
+            index="04"
             title="Technical Stack"
             subtitle="Evidence over claims — the stack behind the projects above."
           />

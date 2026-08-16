@@ -238,12 +238,6 @@ export default function CaseStudyEleva() {
               >
                 ← Back to Work
               </a>
-              <a
-                href="#resume"
-                className="font-mono text-xs text-muted transition-colors hover:text-indigo-400"
-              >
-                See the before / after demo ↑
-              </a>
             </div>
           </Reveal>
         </div>

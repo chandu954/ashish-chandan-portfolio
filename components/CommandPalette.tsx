@@ -11,12 +11,11 @@ type Action =
 export const ACTIONS: Action[] = [
   { kind: "section", id: "top", label: "Go to hero", hint: "start" },
   { kind: "section", id: "projects", label: "View projects", hint: "01 · selected work" },
-  { kind: "section", id: "resume", label: "Resume optimization demo", hint: "04 · before / after" },
   { kind: "section", id: "case-study", label: "Read the case study", hint: "hyacinte ai" },
   { kind: "section", id: "experience", label: "View experience", hint: "02 · work history" },
-  { kind: "section", id: "skills", label: "Technical stack", hint: "06 · skill matrix" },
-  { kind: "section", id: "education", label: "Education", hint: "07 · background" },
-  { kind: "section", id: "contact", label: "Contact me", hint: "08 · let's talk" },
+  { kind: "section", id: "skills", label: "Technical stack", hint: "04 · skill matrix" },
+  { kind: "section", id: "education", label: "Education", hint: "05 · background" },
+  { kind: "section", id: "contact", label: "Contact me", hint: "06 · let's talk" },
   {
     kind: "link",
     href: "https://eleva-beige.vercel.app/eleva",

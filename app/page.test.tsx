@@ -58,7 +58,7 @@ describe("home page integrity", () => {
 
   it("key sections are present", () => {
     render(<Page />);
-    for (const id of ["top", "projects", "experience", "resume", "contact"]) {
+    for (const id of ["top", "projects", "experience", "skills", "contact"]) {
       expect(document.getElementById(id), `missing #${id}`).not.toBeNull();
     }
   });

@@ -5,7 +5,6 @@ import QuickScan from "@/components/QuickScan";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import GithubStrip from "@/components/GithubStrip";
-import Showcase from "@/components/Showcase";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
@@ -27,7 +26,6 @@ export default function Page() {
         <Experience />
         <Projects />
         <GithubStrip />
-        <Showcase />
         <Skills />
         <Education />
         <Contact />
