@@ -13,12 +13,14 @@ export default function Collapse({
   hint,
   defaultOpen = false,
   id,
+  hideHeader = false,
   children,
 }: {
   label: string;
   hint: string;
   defaultOpen?: boolean;
   id?: string;
+  hideHeader?: boolean;
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(defaultOpen);
@@ -32,8 +34,9 @@ export default function Collapse({
   }, [id]);
 
   return (
-    <section className="border-t border-border bg-bg">
-      <div className="mx-auto max-w-6xl px-5 py-6 sm:px-8">
+    <section id={id} className="border-t border-border bg-bg">
+      {!hideHeader ? (
+        <div className="mx-auto max-w-6xl px-5 py-6 sm:px-8">
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
@@ -62,7 +65,8 @@ export default function Collapse({
             </span>
           </span>
         </button>
-      </div>
+        </div>
+      ) : null}
       <div
         className="grid transition-[grid-template-rows] duration-300 ease-out"
         style={{ gridTemplateRows: open ? "1fr" : "0fr" }}

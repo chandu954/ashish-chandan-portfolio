@@ -67,6 +67,14 @@ export default function CaseStudyEleva() {
                 context, with an honest-AI constraint that never fabricates
                 experience.
               </p>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                <span className="font-mono text-[11px] text-indigo-400">
+                  why it matters —{" "}
+                </span>
+                resumes are judged in seconds; the product&apos;s job is turning
+                the rewrite from a gamble into a scored, diff-reviewed,
+                traceable process.
+              </p>
               <p className="mt-4 font-mono text-xs text-faint">
                 product · end-to-end · live at eleva-beige.vercel.app/eleva
               </p>

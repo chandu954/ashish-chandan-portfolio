@@ -159,30 +159,40 @@ function HyacinteApp() {
           </p>
         </div>
 
+        <div className="rounded-lg border border-border bg-surface-2 px-3 py-2">
+          <p className="font-mono text-[10px] text-faint">retrieval</p>
+          <p className="mt-1 font-mono text-xs text-body">
+            3 relevant sources · tenant-scoped
+          </p>
+        </div>
+
         <div className="rounded-lg border border-accent/25 bg-accent/5 p-3">
-          <p className="flex items-center gap-1.5 font-mono text-[10px] text-accent">
-            <span className="size-1.5 rounded-full bg-accent" aria-hidden="true" />
-            ai response
+          <p className="flex items-center justify-between font-mono text-[10px]">
+            <span className="flex items-center gap-1.5 text-accent">
+              <span className="size-1.5 rounded-full bg-accent" aria-hidden="true" />
+              ai response
+            </span>
+            <span className="rounded-md bg-accent/15 px-1.5 py-0.5 text-accent">
+              grounded in 3 sources
+            </span>
           </p>
           <p className="mt-1.5 text-[13px] leading-relaxed text-body">
-            The latest reports indicate a shift in regional trade priorities,
-            driven by...
-          </p>
-          <p className="mt-2 font-mono text-[10px] text-faint">
-            grounded in 3 sources · cited below
+            Regional trade priorities shifted toward renewed infrastructure
+            commitments — the ECOWAS policy brief and both market reports point
+            the same direction.
           </p>
         </div>
 
         <div className="border-t border-border pt-3">
           <p className="font-mono text-[10px] text-faint">sources</p>
           <ul className="mt-2 flex list-none flex-col gap-1.5">
-            {["Market report · Q1", "Policy brief · ECOWAS", "News digest · FR"].map(
+            {["Signed market report · Q1", "ECOWAS policy brief", "News digest · FR"].map(
               (s) => (
                 <li
                   key={s}
                   className="flex items-center gap-2 font-mono text-[11px] text-muted"
                 >
-                  <span className="text-faint">•</span>
+                  <span className="text-faint">✓</span>
                   {s}
                 </li>
               )
@@ -546,11 +556,11 @@ export default function Projects() {
                     Production RAG Infrastructure
                   </p>
                   <p className="mt-3 text-sm font-medium leading-relaxed text-body">
-                    Tenant-isolated RAG infrastructure for a bilingual
-                    executive-intelligence platform.
+                    Tenant-isolated RAG for bilingual executive
+                    intelligence.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {["FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"].map((t) => (
+                    {["FastAPI", "Qdrant", "PostgreSQL", "Redis", "Mistral", "AWS Bedrock", "Docker"].map((t) => (
                       <span
                         key={t}
                         className="rounded-md border border-border bg-surface-2 px-2.5 py-1 font-mono text-[11px] text-muted"
@@ -559,27 +569,14 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                  <div className="mt-5 rounded-lg border border-accent/25 bg-accent/5 px-4 py-3">
-                    <p className="font-mono text-[11px] text-accent">{"/// outcomes"}</p>
-                    <ul className="mt-1.5 flex list-none flex-col gap-1.5 text-sm leading-relaxed text-body">
-                      {[
-                        "Source-grounded EN/FR responses with cited sources.",
-                        "Tenant-isolated retrieval — JWT-scoped, no cross-org leakage.",
-                        "Async OCR + embedding pipeline; Dockerized handoff.",
-                        "RAGAS eval harness — faithfulness and grounding measured on the bilingual eval set.",
-                      ].map((line) => (
-                        <li key={line} className="flex gap-2">
-                          <span className="mt-2.5 size-1 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                          {line}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mt-4 grid grid-cols-3 gap-2">
+                  <p className="mt-4 font-mono text-[11px] text-accent">
+                    {"/// key results"}
+                  </p>
+                  <div className="mt-2 grid grid-cols-3 gap-2">
                     {[
-                      ["EN/FR", "bilingual answers"],
-                      ["2-layer", "tenant isolation"],
-                      ["JWT", "scoped retrieval"],
+                      ["EN / FR", "bilingual answers"],
+                      ["TENANT ISOLATED", "no cross-org leakage"],
+                      ["SOURCE GROUNDED", "cited responses"],
                     ].map(([v, l]) => (
                       <div key={l} className="rounded-lg border border-border bg-surface-2 px-3 py-2">
                         <p className="font-mono text-sm font-semibold text-accent">{v}</p>
@@ -587,10 +584,26 @@ export default function Projects() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-6">
-                    <OpenCaseStudy target="hyacinte-case">
-                      View full case study ↓
+                  <div className="mt-6 flex items-center justify-between gap-4">
+                    <OpenCaseStudy
+                      target="hyacinte-case"
+                      className="group flex items-center gap-2 font-mono text-xs font-semibold text-body transition-colors hover:text-accent"
+                    >
+                      <span className="transition-colors group-hover:text-accent">
+                        view case study
+                      </span>
+                      <span className="text-accent transition-transform duration-200 group-hover:translate-x-0.5">
+                        →
+                      </span>
                     </OpenCaseStudy>
+                    <a
+                      href="https://github.com/chandu954/Hyacinte-AI"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-mono text-xs text-muted transition-colors hover:text-accent"
+                    >
+                      code ↗
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center border-t border-border bg-bg/50 p-7 sm:p-9 lg:border-l lg:border-t-0">
@@ -600,17 +613,25 @@ export default function Projects() {
             </article>
           </Reveal>
 
-          <Collapse
-            id="hyacinte-case"
-            label="Case study 01 — Hyacinte AI · client RAG infrastructure"
-            hint="tenant isolation · async ingestion · RAGAS evals — 2 min read"
-          >
+          <Collapse id="hyacinte-case" label="" hint="" hideHeader>
             <CaseStudy />
           </Collapse>
 
+          <div className="flex justify-center pt-6">
+            <Link
+              href="#eleva"
+              className="font-mono text-xs text-faint transition-colors hover:text-indigo-400"
+            >
+              next project → Eleva
+            </Link>
+          </div>
+
           {/* 03 ELEVA */}
           <Reveal delay={0.05}>
-            <article className="group overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-indigo-400/40">
+            <article
+              id="eleva"
+              className="group overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-indigo-400/40"
+            >
               <div className="grid lg:grid-cols-[1.2fr_1fr]">
                 <div className="p-7 sm:p-9">
                   <div className="flex items-center gap-3">
@@ -699,12 +720,9 @@ export default function Projects() {
                     >
                       GitHub ↗
                     </a>
-                    <Link
-                      href="/blog/building-elevas-ats-pipeline"
-                      className="rounded-lg border border-border bg-bg px-4 py-2 font-mono text-xs text-body transition-colors hover:border-indigo-400/50 hover:text-indigo-400"
-                    >
-                      How the scoring works →
-                    </Link>
+                    <OpenCaseStudy target="eleva-case" className="rounded-lg border border-border bg-bg px-4 py-2 font-mono text-xs text-body transition-colors hover:border-indigo-400/50 hover:text-indigo-400">
+                      view case study →
+                    </OpenCaseStudy>
                   </div>
                 </div>
                 <div className="flex items-center border-t border-border bg-bg/50 p-7 sm:p-9 lg:border-l lg:border-t-0">
@@ -714,11 +732,7 @@ export default function Projects() {
             </article>
           </Reveal>
 
-          <Collapse
-            id="eleva-case"
-            label="Case study 02 — Eleva · LLM product engineering"
-            hint="ATS pipeline · honest-AI guardrails · provider failover — 2 min read"
-          >
+          <Collapse id="eleva-case" label="" hint="" hideHeader>
             <CaseStudyEleva />
           </Collapse>
 

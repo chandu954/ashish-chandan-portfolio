@@ -333,6 +333,14 @@ export default function CaseStudy() {
               — with each tenant&apos;s data fully isolated from the others,
               and answers available in both English and French.
             </p>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">
+              <span className="font-mono text-[11px] text-accent">
+                why it matters —{" "}
+              </span>
+              ungrounded answers in executive intelligence are worse than none;
+              the architecture&apos;s whole job is making sure each response is
+              traceable to the right tenant&apos;s sources, in either language.
+            </p>
           </Reveal>
 
           <Reveal>
