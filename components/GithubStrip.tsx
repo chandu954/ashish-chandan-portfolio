@@ -20,6 +20,7 @@ const WANTED = [
   "ai-workflow-infrastructure-platform",
   "QuickCart",
   "khetika-webapp",
+  "QuickChat",
 ];
 
 export default function GithubStrip() {

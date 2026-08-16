@@ -341,6 +341,83 @@ function KhetikaApp() {
   );
 }
 
+function QuickChatApp() {
+  return (
+    <div className="w-full overflow-hidden rounded-xl border border-border bg-bg text-left">
+      <div className="flex items-center justify-between border-b border-border px-4 py-3">
+        <div className="flex items-center gap-2">
+          <p className="font-mono text-xs text-body">QuickChat</p>
+          <span className="rounded-md bg-amber-400/15 px-2 py-0.5 font-mono text-[10px] text-amber-400">
+            live
+          </span>
+        </div>
+        <span className="flex items-center gap-1.5 font-mono text-[10px] text-faint">
+          <span className="size-1.5 rounded-full bg-teal-400" aria-hidden="true" />
+          socket connected
+        </span>
+      </div>
+
+      <div className="flex min-h-[220px]">
+        <div className="w-16 shrink-0 border-r border-border bg-surface-2/60 p-2 sm:w-24">
+          {["DC", "AM", "SR", "KB"].map((initials, i) => (
+            <div
+              key={initials}
+              className={`mb-1.5 flex size-9 items-center justify-center rounded-lg font-mono text-[10px] sm:size-12 ${
+                i === 0 ? "bg-amber-400/20 text-amber-400" : "bg-surface-2 text-faint"
+              }`}
+            >
+              {initials}
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-1 flex-col">
+          <div className="space-y-2.5 p-3 sm:p-4">
+            <div className="flex justify-end">
+              <p className="max-w-[75%] rounded-lg rounded-tr-sm bg-amber-400/20 px-3 py-1.5 text-[11px] leading-relaxed text-body">
+                pushed the auth middleware — reconnecting sockets now
+              </p>
+            </div>
+            <div className="flex justify-start">
+              <p className="max-w-[75%] rounded-lg rounded-tl-sm bg-surface-2 px-3 py-1.5 text-[11px] leading-relaxed text-muted">
+                nice — JWT re-checked on every handshake?
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <p className="max-w-[75%] rounded-lg rounded-tr-sm bg-amber-400/20 px-3 py-1.5 text-[11px] leading-relaxed text-body">
+                yep, plus bcrypt hashes on login
+              </p>
+            </div>
+            <div className="flex justify-start">
+              <div className="rounded-lg rounded-tl-sm bg-surface-2 px-3 py-1.5">
+                <p className="font-mono text-[9px] text-faint">image</p>
+                <div className="mt-1 flex size-14 items-center justify-center rounded-md bg-bg font-mono text-[9px] text-faint">
+                  via cloudinary
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-start">
+              <p className="flex items-center gap-1.5 text-[10px] text-faint">
+                <span className="size-1.5 animate-pulse rounded-full bg-amber-400" aria-hidden="true" />
+                asha is typing…
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-auto flex items-center gap-2 border-t border-border px-3 py-2.5">
+            <p className="flex-1 rounded-md bg-surface-2 px-3 py-1.5 font-mono text-[10px] text-faint">
+              message…
+            </p>
+            <span className="flex size-7 items-center justify-center rounded-md bg-amber-400 text-[11px] font-semibold text-bg">
+              ↵
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Projects() {
   return (
     <section id="projects" className="scroll-mt-20 bg-bg">
@@ -349,7 +426,7 @@ export default function Projects() {
           <SectionHeader
             index="01"
             title="Selected Work"
-            subtitle="Six systems spanning multi-agent AI, production RAG, LLM products, code review, and full-stack web apps."
+            subtitle="Seven systems spanning multi-agent AI, production RAG, LLM products, code review, and full-stack web apps."
           />
         </Reveal>
 
@@ -869,6 +946,90 @@ export default function Projects() {
                 </div>
                 <div className="flex items-center border-t border-border bg-bg/50 p-7 sm:p-9 lg:border-l lg:border-t-0">
                   <KhetikaApp />
+                </div>
+              </div>
+            </article>
+          </Reveal>
+        {/* 07 QUICKCHAT */}
+          <Reveal delay={0.05}>
+            <article className="group overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-amber-400/40">
+              <div className="grid lg:grid-cols-[1.2fr_1fr]">
+                <div className="p-7 sm:p-9">
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono text-xs text-faint">07</span>
+                    <span className="rounded-md bg-amber-400/15 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-amber-400">
+                      real-time chat
+                    </span>
+                  </div>
+                  <h3 className="mt-4 text-2xl font-semibold tracking-tight transition-colors group-hover:text-amber-400">
+                    QuickChat
+                  </h3>
+                  <p className="mt-1 font-mono text-xs text-faint">
+                    Monorepo Chat App — Socket.io + MongoDB
+                  </p>
+                  <p className="mt-3 text-sm font-medium leading-relaxed text-body">
+                    Real-time chat application with JWT-protected auth,
+                    persistent conversations, and Cloudinary media
+                    sharing across a two-app monorepo.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {["React", "Socket.io", "Express", "MongoDB", "JWT"].map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-md border border-border bg-surface-2 px-2.5 py-1 font-mono text-[11px] text-muted"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-5 rounded-lg border border-amber-400/25 bg-amber-400/5 px-4 py-3">
+                    <p className="font-mono text-[11px] text-amber-400">{"/// engineering"}</p>
+                    <ul className="mt-1.5 flex list-none flex-col gap-1.5 text-sm leading-relaxed text-body">
+                      {[
+                        "Real-time messaging over Socket.io — no polling, events broadcast to connected clients.",
+                        "JWT auth on every API and socket handshake with bcrypt-hashed credentials.",
+                        "Persistent conversation history in MongoDB (Mongoose) and media uploads via Cloudinary.",
+                      ].map((line) => (
+                        <li key={line} className="flex gap-2">
+                          <span className="mt-2.5 size-1 shrink-0 rounded-full bg-amber-400" aria-hidden="true" />
+                          {line}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-4 grid grid-cols-3 gap-2">
+                    {[
+                      ["socket", "realtime events"],
+                      ["JWT", "auth-gated chat"],
+                      ["∞", "persistent history"],
+                    ].map(([v, l]) => (
+                      <div key={l} className="rounded-lg border border-border bg-surface-2 px-3 py-2">
+                        <p className="font-mono text-sm font-semibold text-amber-400">{v}</p>
+                        <p className="mt-0.5 font-mono text-[10px] text-faint">{l}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <a
+                      href="https://quick-chat-client.vercel.app"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-lg bg-amber-400 px-4 py-2 font-mono text-xs font-semibold text-bg transition-all hover:bg-amber-400/90"
+                    >
+                      Live Demo ↗
+                    </a>
+                    <a
+                      href="https://github.com/chandu954/QuickChat"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-lg border border-border bg-bg px-4 py-2 font-mono text-xs text-body transition-colors hover:border-amber-400/50 hover:text-amber-400"
+                    >
+                      GitHub ↗
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center border-t border-border bg-bg/50 p-7 sm:p-9 lg:border-l lg:border-t-0">
+                  <QuickChatApp />
                 </div>
               </div>
             </article>

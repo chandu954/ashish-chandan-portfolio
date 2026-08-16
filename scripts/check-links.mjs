@@ -6,10 +6,12 @@ const URLS = [
   "https://github.com/chandu954/ai-workflow-infrastructure-platform",
   "https://github.com/chandu954/QuickCart",
   "https://github.com/chandu954/khetika-webapp",
+  "https://github.com/chandu954/QuickChat",
   "https://research-swarm-omega.vercel.app/",
   "https://eleva-beige.vercel.app/eleva",
   "https://quick-cart-woad-omega.vercel.app",
   "https://khetika-webapp.vercel.app",
+  "https://quick-chat-client.vercel.app",
 ];
 
 const TIMEOUT_MS = 10000;
