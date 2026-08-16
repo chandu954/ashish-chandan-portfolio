@@ -63,4 +63,6 @@ The site URL is centralized in `lib/site.ts` and consumed by sitemap, robots, JS
 
 ## Deploy
 
+**Live:** https://ashish-chandan.vercel.app — auto-deploys from `main` on push (Vercel ↔ GitHub).
+
 Push to GitHub and import into [Vercel](https://vercel.com) — zero config. Analytics, OG image, sitemap, and robots.txt all work serverless out of the box.
