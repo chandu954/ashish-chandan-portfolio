@@ -28,7 +28,8 @@ async function check(url) {
     if (res.status === 405 || res.status === 501) {
       res = await fetch(url, { method: "GET", redirect: "follow", signal: controller.signal });
     }
-    return { url, status: res.status, ok: res.ok };
+    const blocked = res.status === 999 && url.includes("linkedin.com");
+    return { url, status: res.status, ok: res.ok || blocked };
   } catch (err) {
     return { url, status: err.name === "AbortError" ? "timeout" : "error", ok: false };
   } finally {
