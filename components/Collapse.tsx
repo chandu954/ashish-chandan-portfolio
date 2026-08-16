@@ -1,19 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const registry = new Map<string, (open: boolean) => void>();
+
+export function openCollapse(id: string) {
+  registry.get(id)?.(true);
+}
 
 export default function Collapse({
   label,
   hint,
   defaultOpen = false,
+  id,
   children,
 }: {
   label: string;
   hint: string;
   defaultOpen?: boolean;
+  id?: string;
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(defaultOpen);
+
+  useEffect(() => {
+    if (!id) return;
+    registry.set(id, setOpen);
+    return () => {
+      registry.delete(id);
+    };
+  }, [id]);
 
   return (
     <section className="border-t border-border bg-bg">

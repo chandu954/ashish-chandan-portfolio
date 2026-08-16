@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { openCollapse } from "./Collapse";
 
 type Action =
   | { kind: "section"; id: string; label: string; hint: string }
@@ -61,6 +62,7 @@ export const ACTIONS: Action[] = [
 
 function run(action: Action) {
   if (action.kind === "section") {
+    if (action.id === "case-study") openCollapse("hyacinte-case");
     document.getElementById(action.id)?.scrollIntoView({ behavior: "smooth" });
   } else if (action.kind === "link") {
     window.open(action.href, "_blank", "noreferrer");

@@ -1,6 +1,10 @@
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 import DemoPlayer from "./DemoPlayer";
+import Collapse from "./Collapse";
+import OpenCaseStudy from "./OpenCaseStudy";
+import CaseStudy from "./CaseStudy";
+import CaseStudyEleva from "./CaseStudyEleva";
 import Link from "next/link";
 
 function ElevaApp() {
@@ -584,12 +588,9 @@ export default function Projects() {
                     ))}
                   </div>
                   <div className="mt-6">
-                    <a
-                      href="#case-study"
-                      className="rounded-lg border border-border bg-bg px-4 py-2 font-mono text-xs text-body transition-colors hover:border-accent/50 hover:text-accent"
-                    >
+                    <OpenCaseStudy target="hyacinte-case">
                       View full case study ↓
-                    </a>
+                    </OpenCaseStudy>
                   </div>
                 </div>
                 <div className="flex items-center border-t border-border bg-bg/50 p-7 sm:p-9 lg:border-l lg:border-t-0">
@@ -598,6 +599,14 @@ export default function Projects() {
               </div>
             </article>
           </Reveal>
+
+          <Collapse
+            id="hyacinte-case"
+            label="Case study 01 — Hyacinte AI · client RAG infrastructure"
+            hint="tenant isolation · async ingestion · RAGAS evals — 2 min read"
+          >
+            <CaseStudy />
+          </Collapse>
 
           {/* 03 ELEVA */}
           <Reveal delay={0.05}>
@@ -704,6 +713,14 @@ export default function Projects() {
               </div>
             </article>
           </Reveal>
+
+          <Collapse
+            id="eleva-case"
+            label="Case study 02 — Eleva · LLM product engineering"
+            hint="ATS pipeline · honest-AI guardrails · provider failover — 2 min read"
+          >
+            <CaseStudyEleva />
+          </Collapse>
 
           {/* 04 AI CODE REVIEW PLATFORM */}
           <Reveal delay={0.05}>

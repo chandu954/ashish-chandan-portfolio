@@ -6,9 +6,6 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import GithubStrip from "@/components/GithubStrip";
 import Showcase from "@/components/Showcase";
-import Collapse from "@/components/Collapse";
-import CaseStudy from "@/components/CaseStudy";
-import CaseStudyEleva from "@/components/CaseStudyEleva";
 import Experience from "@/components/Experience";
 import Praise from "@/components/Praise";
 import Skills from "@/components/Skills";
@@ -32,12 +29,6 @@ export default function Page() {
         <Projects />
         <GithubStrip />
         <Showcase />
-        <Collapse label="Case study 01 — Hyacinte AI · client RAG infrastructure" hint="tenant isolation · async ingestion · RAGAS evals — 2 min read">
-          <CaseStudy />
-        </Collapse>
-        <Collapse label="Case study 02 — Eleva · LLM product engineering" hint="ATS pipeline · honest-AI guardrails · provider failover — 2 min read">
-          <CaseStudyEleva />
-        </Collapse>
         <Praise />
         <Skills />
         <Education />
