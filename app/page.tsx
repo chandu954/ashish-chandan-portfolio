@@ -32,7 +32,7 @@ export default function Page() {
         <Projects />
         <GithubStrip />
         <Showcase />
-        <Collapse defaultOpen label="Case study 01 — Hyacinte AI · client RAG infrastructure" hint="tenant isolation · async ingestion · RAGAS evals — 2 min read">
+        <Collapse label="Case study 01 — Hyacinte AI · client RAG infrastructure" hint="tenant isolation · async ingestion · RAGAS evals — 2 min read">
           <CaseStudy />
         </Collapse>
         <Collapse label="Case study 02 — Eleva · LLM product engineering" hint="ATS pipeline · honest-AI guardrails · provider failover — 2 min read">
