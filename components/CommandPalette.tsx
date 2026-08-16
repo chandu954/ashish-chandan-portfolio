@@ -48,7 +48,7 @@ export const ACTIONS: Action[] = [
   },
   {
     kind: "link",
-    href: "https://www.linkedin.com/in/ashish-chandan",
+    href: "https://www.linkedin.com/in/ashish-chandan-4421a2259",
     label: "LinkedIn",
     hint: "ashish-chandan ↗",
   },

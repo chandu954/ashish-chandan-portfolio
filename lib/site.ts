@@ -7,6 +7,6 @@ export const SITE_TAGLINE = "AI Engineer & Full-Stack Developer";
 
 export const SOCIAL = {
   github: "https://github.com/chandu954",
-  linkedin: "https://www.linkedin.com/in/ashish-chandan",
+  linkedin: "https://www.linkedin.com/in/ashish-chandan-4421a2259",
   email: "mailto:ashishchandan0425@gmail.com",
 };

@@ -1,6 +1,6 @@
 const URLS = [
   "https://github.com/chandu954",
-  "https://www.linkedin.com/in/ashish-chandan",
+  "https://www.linkedin.com/in/ashish-chandan-4421a2259",
   "https://github.com/chandu954/Research-Swarm",
   "https://github.com/chandu954/Eleva",
   "https://github.com/chandu954/ai-workflow-infrastructure-platform",

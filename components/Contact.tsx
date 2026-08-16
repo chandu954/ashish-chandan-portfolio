@@ -50,7 +50,7 @@ export default function Contact() {
                 <div>
                   <p className="font-mono text-xs text-faint">linkedin ↗</p>
                   <a
-                    href="https://www.linkedin.com/in/ashish-chandan"
+                    href="https://www.linkedin.com/in/ashish-chandan-4421a2259"
                     target="_blank"
                     rel="noreferrer"
                     className="text-sm text-body transition-colors hover:text-accent"

@@ -1,6 +1,6 @@
 const SOCIALS = [
   { label: "GitHub", href: "https://github.com/chandu954" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/ashish-chandan" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ashish-chandan-4421a2259" },
   { label: "Blog", href: "/blog" },
   { label: "Email", href: "mailto:ashishchandan0425@gmail.com" },
 ];
