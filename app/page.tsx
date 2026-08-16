@@ -7,7 +7,6 @@ import Projects from "@/components/Projects";
 import GithubStrip from "@/components/GithubStrip";
 import Showcase from "@/components/Showcase";
 import Experience from "@/components/Experience";
-import Praise from "@/components/Praise";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
@@ -29,7 +28,6 @@ export default function Page() {
         <Projects />
         <GithubStrip />
         <Showcase />
-        <Praise />
         <Skills />
         <Education />
         <Contact />
