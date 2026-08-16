@@ -1,29 +1,6 @@
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 
-const CAPABILITIES = [
-  {
-    num: "01",
-    title: "LLM Applications",
-    desc: "Production-oriented applications around LLM APIs and structured workflows.",
-  },
-  {
-    num: "02",
-    title: "RAG Systems",
-    desc: "Ingestion → chunking → embeddings → retrieval → grounded generation.",
-  },
-  {
-    num: "03",
-    title: "Agentic Workflows",
-    desc: "Task decomposition → delegation → parallel execution → synthesis.",
-  },
-  {
-    num: "04",
-    title: "Production Systems",
-    desc: "APIs → background jobs → databases → Docker → deployment.",
-  },
-];
-
 const SKILL_GROUPS: [string, [string, number][]][] = [
   [
     "ai / llm",
@@ -121,34 +98,6 @@ export default function Skills() {
                 github.com/chandu954 ↗
               </a>
             </p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.05}>
-          <div className="mt-10">
-            <div className="flex items-center gap-3">
-              <span className="font-mono text-xs text-accent">{"//"}</span>
-              <h3 className="font-mono text-sm font-medium text-body">
-                how I build ai systems
-              </h3>
-              <span className="h-px flex-1 bg-border" aria-hidden="true" />
-            </div>
-            <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {CAPABILITIES.map((c) => (
-                <div
-                  key={c.num}
-                  className="rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-accent/35"
-                >
-                  <p className="font-mono text-xs text-faint">{c.num}</p>
-                  <h4 className="mt-2 font-mono text-sm font-semibold text-accent">
-                    {c.title}
-                  </h4>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted">
-                    {c.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </Reveal>
       </div>
